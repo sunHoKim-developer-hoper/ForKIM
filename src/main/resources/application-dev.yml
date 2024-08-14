@@ -1,0 +1,9 @@
+spring:
+#   security:
+#     user:
+#       name: user
+#       password: test
+#       roles: USER
+  devtools:
+    restart:
+      enabled: true
