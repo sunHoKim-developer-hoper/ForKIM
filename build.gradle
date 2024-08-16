@@ -30,8 +30,15 @@ dependencies {
     implementation 'com.h2database:h2:2.1.214'
 	compileOnly 'org.projectlombok:lombok:1.18.28' // Lombok 라이브러리 추가
 	annotationProcessor 'org.projectlombok:lombok:1.18.28' // Lombok 어노테이션 프로세서 추가
+	//테스트에서도 lombok 사용
+	testCompileOnly 'org.projectlombok:lombok:1.18.28'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+	options.compilerArgs << '-parameters'
 }

@@ -1,8 +1,7 @@
-package com.sunho.kim.configure;
+package com.sunho.kim.configure.securityconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -38,7 +37,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        System.out.println("gdgdsss");
+        
         return http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
         // .httpBasic(Customizer.withDefaults()).build();
         .httpBasic(basic -> basic.authenticationEntryPoint(new CustomAuthenticationEntryPoint())).build();

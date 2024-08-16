@@ -1,4 +1,4 @@
-package com.sunho.kim.configure;
+package com.sunho.kim.configure.securityconfig;
 
 import java.io.IOException;
 
