@@ -1,12 +1,13 @@
-package com.sunho.kim.trace.threadlocal.code;
+package com.sunho.kim.trace.threadlocal;
 
+import com.sunho.kim.trace.threadlocal.code.FiledService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 @Slf4j
 public class FiledServiceTest {
 
-    private  FiledService filedService = new FiledService();
+    private FiledService filedService = new FiledService();
 
     @Test
     void filed(){
