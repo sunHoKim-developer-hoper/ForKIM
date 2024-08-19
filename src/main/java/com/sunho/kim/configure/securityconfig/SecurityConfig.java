@@ -35,18 +35,18 @@ public class SecurityConfig {
     //     return http.build();
     // }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        
-        return http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
-        // .httpBasic(Customizer.withDefaults()).build();
-        .httpBasic(basic -> basic.authenticationEntryPoint(new CustomAuthenticationEntryPoint())).build();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return new InMemoryUserDetailsManager(User.withUsername("user").password("{noop}1111").roles("USER").build()
-        // User.withUsername("sunho").password("{noop}2222").roles("USER").build());
-        );
-    }
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+//
+//        return http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
+//        // .httpBasic(Customizer.withDefaults()).build();
+//        .httpBasic(basic -> basic.authenticationEntryPoint(new CustomAuthenticationEntryPoint())).build();
+//    }
+//
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        return new InMemoryUserDetailsManager(User.withUsername("user").password("{noop}1111").roles("USER").build()
+//        // User.withUsername("sunho").password("{noop}2222").roles("USER").build());
+//        );
+//    }
 }
