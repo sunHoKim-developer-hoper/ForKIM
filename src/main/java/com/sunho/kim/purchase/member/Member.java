@@ -1,4 +1,4 @@
-package com.sunho.kim.member;
+package com.sunho.kim.purchase.member;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
