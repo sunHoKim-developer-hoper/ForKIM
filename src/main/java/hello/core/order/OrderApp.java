@@ -9,7 +9,6 @@ public class OrderApp {
     
     public static void main(String[] args) {
 
-        
         AppConfig appConfig = new AppConfig();
         MemberService memberService = appConfig.memberService();
         OrderService orderService = appConfig.orderService();
@@ -19,7 +18,7 @@ public class OrderApp {
         
         Member kim = new Member(1L, "Kim", Grade.VIP);
         memberService.join(kim);
-        Order order = orderService.createOrder(kim.getId(), "물건", 10000);
+        Order order = orderService.createOrder(kim.getId(), "물건", 30000);
         System.out.println(order.getDiscountPrice());
         //int discountPrice =  discountPolicy.discount(kim, 10000);
         
