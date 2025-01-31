@@ -2,16 +2,16 @@ package hello.core.order;
 
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
-import hello.core.member.MemoryMemberRepository;
+import hello.core.member.MemberRepository;
 
 public class OrderServiceImpl implements OrderService{
     
     //DIP를 지키고 있다!!
-    private final MemoryMemberRepository memberRepository; //= new MemoryMemberRepository();
+    private final MemberRepository memberRepository; //= new MemoryMemberRepository();
     //private final DiscountPolicy discardPolicy = new FixedDiscountPolicy();
     private final DiscountPolicy discardPolicy; //= new RateDiscountPolicy();
     
-    public OrderServiceImpl(MemoryMemberRepository memberRepository, DiscountPolicy discardPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discardPolicy) {
         this.memberRepository = memberRepository;
         this.discardPolicy = discardPolicy;
     }
