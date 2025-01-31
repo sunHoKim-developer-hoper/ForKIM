@@ -3,22 +3,26 @@ package hello.core.member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MemberServiceTest {
+import hello.core.config.AppConfig;
 
-    MemberService memberService = new MemberServiceImpl();
+public class MemberServiceTest {
+    
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    //MemberService memberService = new MemberServiceImpl();
 
     @Test
-    void join(){
-        
-        //given
+    void join() {
+
+        // given
         Member kim = new Member(1L, "Kim", Grade.VIP);
         Member lee = new Member(2L, "Lee", Grade.BASIC);
 
-        //when
+        // when
         memberService.join(kim);
         Member findMember = memberService.findMember(1L);
 
-        //then
+        // then
         Assertions.assertThat(kim).isEqualTo(findMember);
     }
 
